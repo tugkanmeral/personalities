@@ -1,0 +1,65 @@
+# ==========================================
+# Sensitive Data & Configuration Files
+# ==========================================
+backend/appsettings.json
+backend/appsettings.*.json
+!backend/appsettings.Example.json
+backend/Data/
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+
+# ==========================================
+# .NET / C# Build & Test Artifacts
+# ==========================================
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+TestResults/
+[Tt]est[Rr]esult*/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.nupkg
+*.snupkg
+
+# ==========================================
+# Node.js / React / Vite (Frontend)
+# ==========================================
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+dist-ssr/
+.vite/
+frontend/.vite/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.eslintcache
+*.tsbuildinfo
+
+# ==========================================
+# IDE & Operating System (macOS / VS / Rider)
+# ==========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.vs/
+.idea/
+Library/
+*.swp
+*.swo
+*~

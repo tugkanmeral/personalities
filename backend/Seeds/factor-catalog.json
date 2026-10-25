@@ -1,0 +1,150 @@
+{
+  "genders": [
+    "Female",
+    "Male",
+    "Unspecified"
+  ],
+  "growingUpEnvironments": [
+    "Metropolitan / Urban Center",
+    "Suburban Neighborhood",
+    "Small / Mid-Sized Town",
+    "Coastal Town",
+    "Rural / Countryside",
+    "International / Multicultural Environment"
+  ],
+  "maritalStatuses": [
+    "Child / Single",
+    "Single",
+    "In a Relationship",
+    "Married",
+    "Married with Children",
+    "Divorced"
+  ],
+  "childhoodFinancialStatuses": [
+    "Low / Modest Income (Limited Resources)",
+    "Lower-Middle Income (Focused on Essentials)",
+    "Standard Middle Class (Balanced)",
+    "Upper-Middle Income (Private Education & Hobby Access)",
+    "Wealthy / Affluent (High Prosperity)"
+  ],
+  "currentFinancialStatuses": [
+    "Dependent on Family (Child / Student)",
+    "Financially Struggling / Paying Off Debt",
+    "Standard / Balanced Salary Earner",
+    "Financially Comfortable / Upper-Middle Income",
+    "High Income / Investor / Wealthy"
+  ],
+  "educationLevels": [
+    "Preschool / Kindergarten",
+    "Elementary / Middle School",
+    "High School",
+    "Associate / Vocational Degree",
+    "Bachelor's Degree",
+    "Master's / Doctorate (PhD)",
+    "Self-Taught / Autodidact"
+  ],
+  "educationFields": [
+    "None (Child / Basic Education)",
+    "Computer / Software / Electrical Engineering",
+    "Mechanical / Automotive / Industrial Engineering",
+    "Economics / Business / Finance",
+    "Social Sciences / Psychology / Sociology",
+    "Medicine / Health Sciences",
+    "Fine Arts / Design / Architecture",
+    "Law / Public Administration",
+    "Natural Sciences (Physics, Mathematics, Chemistry)",
+    "Technical / Craft / Vocational Training"
+  ],
+  "financialAttitudes": [
+    "No Concept of Money Yet (Child)",
+    "Frugal & Conservative (Savings-Oriented)",
+    "Value-for-Money & Functionality Focused (Analytical Consumer)",
+    "Invests in Quality & Technology",
+    "Experience & Enjoyment Spender",
+    "Status & Prestige Oriented",
+    "Risk-Tolerant / Investment Focused"
+  ],
+  "coreMotivations": [
+    "Play, Fun, and Affection (Childlike Curiosity)",
+    "Acquiring Knowledge, Technology, and Competence",
+    "Financial Security and Stability",
+    "Freedom, Adrenaline, and Personal Passions",
+    "Career Success and Recognition",
+    "Family Harmony and Social Belonging",
+    "Creativity and Self-Expression"
+  ],
+  "decisionStyles": [
+    "Emotional, Visual, and Impulse-Driven (Spontaneous)",
+    "Analytical, Data-Driven, and Engineering-Minded",
+    "Cost-Benefit and Time-Optimization Focused",
+    "Intuitive and Experience-Based",
+    "Traditional and Risk-Averse",
+    "Socially Influenced and Trend-Aware"
+  ],
+  "suggestedInterests": [
+    "Embedded Systems & Technology",
+    "Artificial Intelligence & Software",
+    "Motorsport & Mechanics",
+    "Automotive Engineering",
+    "Football & Team Sports",
+    "Drawing & Coloring",
+    "Cartoons",
+    "Playgrounds",
+    "Economics & Finance",
+    "Science & Engineering",
+    "Camping & Outdoors",
+    "Video Games",
+    "History & Geopolitics",
+    "Gastronomy & Coffee",
+    "Cinema & Literature",
+    "Music & Concerts"
+  ],
+  "extensibleFactorTemplates": [
+    {
+      "category": "Media & Information Diet",
+      "key": "media_consumption_habit",
+      "label": "Daily News & Content Habit",
+      "suggestedOptions": [
+        "In-depth technical articles, engineering newsletters, and niche specialist channels",
+        "Short-form social media videos and trending headlines",
+        "Traditional broadcast news and financial newspapers",
+        "Visual, colorful entertainment and animated stories"
+      ],
+      "defaultInfluenceHint": "Shapes how the character prioritizes information sources and topic categories."
+    },
+    {
+      "category": "Time Allocation",
+      "key": "free_time_scarcity",
+      "label": "Available Leisure Time & Schedule Density",
+      "suggestedOptions": [
+        "Highly demanding schedule; only allocates time to top 1-2 core passions",
+        "Balanced work-life schedule",
+        "Abundant free time (Child / Retired / Student)"
+      ],
+      "defaultInfluenceHint": "Determines how strictly the character filters out low-priority distractions."
+    },
+    {
+      "category": "Cultural & Family Heritage",
+      "key": "family_value_system",
+      "label": "Foundational Family Value",
+      "suggestedOptions": [
+        "Self-reliance, technical curiosity, and hands-on problem solving",
+        "Respect for tradition and institutional authority",
+        "Independent thought and creative expression",
+        "Competitiveness and drive for excellence"
+      ],
+      "defaultInfluenceHint": "Forms the underlying belief system in the character's inner monologue."
+    },
+    {
+      "category": "Risk & Innovation",
+      "key": "tech_adoption_level",
+      "label": "Technology Adoption Profile",
+      "suggestedOptions": [
+        "Early Adopter (Eagerly explores cutting-edge hardware and software)",
+        "Pragmatic Adopter (Waits until utility is proven)",
+        "Traditional / Skeptical of new technology"
+      ],
+      "defaultInfluenceHint": "Adjusts affinity toward technological and innovative options."
+    }
+  ]
+}

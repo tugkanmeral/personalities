@@ -1,0 +1,124 @@
+[
+  {
+    "id": "seed-ethan-35",
+    "name": "Ethan Carter",
+    "avatarEmoji": "🏍️",
+    "summaryTagline": "35yo, Male • Senior Embedded Systems & Software Engineer, Amateur Track Rider",
+    "demographics": {
+      "age": 35,
+      "gender": "Male",
+      "country": "United States",
+      "city": "Austin",
+      "growingUpEnvironment": "Small / Mid-Sized Town",
+      "maritalStatus": "Single"
+    },
+    "socioEconomic": {
+      "childhoodFinancialStatus": "Low / Modest Income (Limited Resources)",
+      "currentFinancialStatus": "Financially Comfortable / Upper-Middle Income",
+      "educationLevel": "Bachelor's Degree",
+      "educationField": "Computer / Software / Electrical Engineering",
+      "profession": "Senior Embedded Systems & Software Engineer",
+      "financialAttitude": "Value-for-Money & Functionality Focused (Analytical Consumer)"
+    },
+    "bigFive": {
+      "openness": 85,
+      "conscientiousness": 80,
+      "extraversion": 45,
+      "agreeableness": 55,
+      "neuroticism": 30
+    },
+    "valuesAndInterests": {
+      "interests": [
+        "Embedded Systems & Technology",
+        "Motorsport & Mechanics"
+      ],
+      "dislikes": [],
+      "coreMotivation": "Acquiring Knowledge, Technology, and Competence",
+      "decisionStyle": "Analytical, Data-Driven, and Engineering-Minded",
+      "speechStyleNote": ""
+    },
+    "customFactors": []
+  },
+  {
+    "id": "seed-lily-7",
+    "name": "Lily Parker",
+    "avatarEmoji": "🎀",
+    "summaryTagline": "7yo • 1st Grade Elementary Student",
+    "demographics": {
+      "age": 7,
+      "gender": "Female",
+      "country": "United Kingdom",
+      "city": "Bristol",
+      "growingUpEnvironment": "Metropolitan / Urban Center",
+      "maritalStatus": "Child / Single"
+    },
+    "socioEconomic": {
+      "childhoodFinancialStatus": "Standard Middle Class (Balanced)",
+      "currentFinancialStatus": "Dependent on Family (Child / Student)",
+      "educationLevel": "Elementary / Middle School",
+      "educationField": "None (Child / Basic Education)",
+      "profession": "1st Grade Elementary Student",
+      "financialAttitude": "No Concept of Money Yet (Child)"
+    },
+    "bigFive": {
+      "openness": 90,
+      "conscientiousness": 40,
+      "extraversion": 85,
+      "agreeableness": 85,
+      "neuroticism": 45
+    },
+    "valuesAndInterests": {
+      "interests": [
+        "Drawing & Coloring",
+        "Cartoons",
+        "Playgrounds"
+      ],
+      "dislikes": [],
+      "coreMotivation": "Play, Fun, and Affection (Childlike Curiosity)",
+      "decisionStyle": "Emotional, Visual, and Impulse-Driven (Spontaneous)",
+      "speechStyleNote": ""
+    },
+    "customFactors": []
+  },
+  {
+    "id": "seed-arthur-58",
+    "name": "Arthur Vance",
+    "avatarEmoji": "📰",
+    "summaryTagline": "58yo, Male • Retired Bank Branch Manager",
+    "demographics": {
+      "age": 58,
+      "gender": "Male",
+      "country": "United Kingdom",
+      "city": "London",
+      "growingUpEnvironment": "Metropolitan / Urban Center",
+      "maritalStatus": "Married with Children"
+    },
+    "socioEconomic": {
+      "childhoodFinancialStatus": "Lower-Middle Income (Focused on Essentials)",
+      "currentFinancialStatus": "Financially Comfortable / Upper-Middle Income",
+      "educationLevel": "Bachelor's Degree",
+      "educationField": "Economics / Business / Finance",
+      "profession": "Retired Bank Branch Manager",
+      "financialAttitude": "Frugal & Conservative (Savings-Oriented)"
+    },
+    "bigFive": {
+      "openness": 35,
+      "conscientiousness": 90,
+      "extraversion": 55,
+      "agreeableness": 65,
+      "neuroticism": 40
+    },
+    "valuesAndInterests": {
+      "interests": [
+        "Economics & Finance",
+        "Traditional Sports",
+        "History"
+      ],
+      "dislikes": [],
+      "coreMotivation": "Financial Security and Stability",
+      "decisionStyle": "Traditional and Risk-Averse",
+      "speechStyleNote": ""
+    },
+    "customFactors": []
+  }
+]
