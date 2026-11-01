@@ -6,6 +6,7 @@ public class MongoDbSettings
     public string DatabaseName { get; set; } = "PersonalitiesDb";
     public string PersonasCollectionName { get; set; } = "Personas";
     public string ArenaHistoryCollectionName { get; set; } = "ArenaSessions";
+    public string ChatSessionsCollectionName { get; set; } = "ChatSessions";
 }
 
 public class LlmSettings

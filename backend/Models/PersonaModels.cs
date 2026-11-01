@@ -25,6 +25,11 @@ public class PersonaCharacter
     public List<CustomFactor> CustomFactors { get; set; } = new();
 
     /// <summary>
+    /// Persistent cross-session memory vault for this persona (remembered across 1-on-1 and Group Chats).
+    /// </summary>
+    public List<PersonaMemoryFact> MemoryFacts { get; set; } = new();
+
+    /// <summary>
     /// Synthesized psychological profile derived from raw character factors.
     /// </summary>
     public SynthesizedPsychology SynthesizedProfile { get; set; } = new();
@@ -116,4 +121,27 @@ public class SynthesizedPsychology
     public string CognitiveAndDecisionFilter { get; set; } = string.Empty;
     public string LinguisticTone { get; set; } = string.Empty;
     public List<string> BehavioralRules { get; set; } = new();
+}
+
+[BsonIgnoreExtraElements]
+public class PersonaMemoryFact
+{
+    public string Id { get; set; } = Guid.NewGuid().ToString("N")[..10];
+    public string PersonaId { get; set; } = string.Empty;
+    public string PersonaName { get; set; } = string.Empty;
+    public string Fact { get; set; } = string.Empty;
+
+    /// <summary>
+    /// True if this fact is a secret, mistake, confession, or confidential detail shared in a private 1-on-1 chat.
+    /// Confidential facts are remembered by the persona in Group Chats but NEVER revealed to other participants.
+    /// </summary>
+    public bool IsConfidential { get; set; }
+
+    /// <summary>
+    /// "1on1" or "group"
+    /// </summary>
+    public string SourceMode { get; set; } = "1on1";
+
+    public string SourceSessionId { get; set; } = string.Empty;
+    public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
 }

@@ -3,7 +3,12 @@ using System.Security.Authentication;
 using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 using Personalities.Api.Configuration;
+using Personalities.Api.Models;
+using Personalities.Api.Services;
 using Xunit.Abstractions;
 
 namespace Personalities.Api.Tests;
@@ -92,5 +97,38 @@ public class GeminiConnectionTests
         }
 
         Assert.False(string.IsNullOrWhiteSpace(workingResponse), "No model returned HTTP 200 OK. Check test output for details.");
+    }
+
+    [Fact]
+    public async Task MongoDb_ShouldBackfillMemoryFacts_And_EnsureIndexes()
+    {
+        var repoRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", ".."));
+        var appSettingsPath = Path.Combine(repoRoot, "backend", "appsettings.json");
+        var config = new ConfigurationBuilder()
+            .AddJsonFile(appSettingsPath, optional: false)
+            .Build();
+
+        var mongoSettings = new MongoDbSettings();
+        config.GetSection("MongoDbSettings").Bind(mongoSettings);
+
+        var client = new MongoClient(mongoSettings.ConnectionString);
+        var db = client.GetDatabase(mongoSettings.DatabaseName);
+        var personasCol = db.GetCollection<PersonaCharacter>(mongoSettings.PersonasCollectionName);
+        var chatCol = db.GetCollection<ChatSession>(mongoSettings.ChatSessionsCollectionName);
+
+        // Ensure MemoryFacts field exists on all existing Personas and ChatSessions documents in MongoDB
+        var pUpdate = await personasCol.UpdateManyAsync(
+            Builders<PersonaCharacter>.Filter.Exists(x => x.MemoryFacts, false),
+            Builders<PersonaCharacter>.Update.Set(x => x.MemoryFacts, new List<PersonaMemoryFact>()));
+
+        var cUpdate = await chatCol.UpdateManyAsync(
+            Builders<ChatSession>.Filter.Exists(x => x.MemoryFacts, false),
+            Builders<ChatSession>.Update.Set(x => x.MemoryFacts, new List<PersonaMemoryFact>()));
+
+        _output.WriteLine($"Personas backfilled with MemoryFacts: {pUpdate.ModifiedCount}, ChatSessions backfilled: {cUpdate.ModifiedCount}");
+
+        var allPersonas = await personasCol.Find(FilterDefinition<PersonaCharacter>.Empty).ToListAsync();
+        Assert.NotEmpty(allPersonas);
+        Assert.All(allPersonas, p => Assert.NotNull(p.MemoryFacts));
     }
 }

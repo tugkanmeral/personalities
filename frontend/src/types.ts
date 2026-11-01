@@ -49,6 +49,17 @@ export interface SynthesizedPsychology {
   behavioralRules: string[];
 }
 
+export interface PersonaMemoryFact {
+  id: string;
+  personaId?: string;
+  personaName?: string;
+  fact: string;
+  isConfidential: boolean;
+  sourceMode: '1on1' | 'group' | string;
+  sourceSessionId: string;
+  createdAtUtc: string;
+}
+
 export interface PersonaCharacter {
   id?: string;
   name: string;
@@ -59,6 +70,7 @@ export interface PersonaCharacter {
   bigFive: BigFiveSection;
   valuesAndInterests: ValuesAndInterestsSection;
   customFactors: CustomFactor[];
+  memoryFacts?: PersonaMemoryFact[];
   synthesizedProfile?: SynthesizedPsychology;
   compiledSystemPromptMd?: string;
   createdAtUtc?: string;
@@ -123,4 +135,78 @@ export interface SystemStatus {
   ollamaBaseUrl: string;
   ollamaDefaultModel: string;
   ollamaAvailableModels?: string[];
+}
+
+export interface ChatParticipant {
+  personaId: string;
+  name: string;
+  avatarEmoji: string;
+  summaryTagline: string;
+}
+
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  personaId?: string;
+  personaName?: string;
+  avatarEmoji?: string;
+  replyToMessageId?: string;
+  replyToSenderName?: string;
+  replyToContentPreview?: string;
+  content: string;
+  providerUsed?: string;
+  modelUsed?: string;
+  durationMs?: number;
+  estimatedTokens?: number;
+  promptTokens?: number;
+  completionTokens?: number;
+  totalTokens?: number;
+  extractedMemoryFact?: PersonaMemoryFact;
+  hasError?: boolean;
+  warningMessage?: string;
+  createdAtUtc: string;
+}
+
+export interface ChatContextMetrics {
+  totalMessageCount: number;
+  activeWindowCount: number;
+  compactedMessageCount: number;
+  estimatedPromptTokens: number;
+  rawUncompressedTokens: number;
+  savedPercentage: number;
+  sessionPromptTokensSpent?: number;
+  sessionCompletionTokensSpent?: number;
+  sessionTotalTokensSpent?: number;
+}
+
+export interface ChatSession {
+  id: string;
+  title: string;
+  isGroupChat: boolean;
+  participantPersonaIds: string[];
+  participants: ChatParticipant[];
+  rollingSummary: string;
+  summarizedUpToIndex: number;
+  compactionTokensSpent?: number;
+  memoryFacts?: PersonaMemoryFact[];
+  messages: ChatMessage[];
+  contextMetrics: ChatContextMetrics;
+  createdAtUtc: string;
+  updatedAtUtc: string;
+}
+
+export interface ChatTurnError {
+  personaId: string;
+  personaName: string;
+  avatarEmoji: string;
+  provider: string;
+  model: string;
+  errorMessage: string;
+}
+
+export interface ChatMessageTurnResponse {
+  session: ChatSession;
+  newMessages: ChatMessage[];
+  newlyLearnedFacts: PersonaMemoryFact[];
+  errors?: ChatTurnError[];
 }

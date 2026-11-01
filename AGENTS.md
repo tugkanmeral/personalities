@@ -52,3 +52,6 @@ Every AI agent working on this repository must strictly adhere to the following 
    - Whenever modifying the LLM orchestrator or endpoint configuration, run `dotnet test backend.Tests` (`GeminiConnectionTests`) to verify connectivity before testing in the UI.
 3. **UI Render & Performance Rules (`frontend/`):**
    - The `/api/personas/preview-compile` effect in `App.tsx` must only run when `activeTab === 'studio'` is active, preventing unnecessary background compilation calls or render loops while in the Arena view.
+4. **MongoDB Index-First & Query Discipline (`backend/Repositories/`):**
+   - **Reuse Existing Indexes First:** When writing any new MongoDB query (filter, sort, or projection), always check existing indexes first and structure the query (following the ESR — Equality, Sort, Range — rule) to leverage an existing index whenever possible.
+   - **Ensure Supporting Index Exists:** Never introduce an unindexed query or sort (`COLLSCAN` / in-memory sort). If a new query cannot be served by an existing index, explicitly define and ensure the corresponding index in the repository initialization (`EnsureIndexesAsync`).
